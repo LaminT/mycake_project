@@ -43,17 +43,19 @@
           commodi id libero eveniet harum perferendis laborum molestias quia.</p>
       </div>
       <div class="col-md-4">
+        {% if mvp_bakers %}
+        {% for baker in mvp_bakers %}
         <div class="card">
-          <img class="card-img-top" src="assets/img/bakers/kyle.jpg" alt="Seller of the month">
+          <img class="card-img-top" src="{{ baker.photos.url }}" alt="Seller of the month">
           <div class="card-body">
             <h5 class="card-title">Seller Of The Month</h5>
-            <h6 class="text-secondary">Kyle Brown</h6>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nesciunt amet, illo
-              itaque similique repellat.
-              content.
-            </p>
+            <h6 class="text-secondary">{{baker.name}}</h6>
+            <p class="card-text">{{baker.description}}</p>
           </div>
         </div>
+        {% endfor %}
+        {% endif %}
+
       </div>
     </div>
   </div>
@@ -64,7 +66,7 @@
   <h2 class="display-4">We Bake For You</h2>
   <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem velit aperiam, unde aliquid at similique!</h4>
   <hr>
-  <a href="listings.html" class="btn btn-secondary text-white btn-lg">View Our Cakes</a>
+  <a href="{% url 'listings'%}" class="btn btn-secondary text-white btn-lg">View Our Cakes</a>
 </section>
 
 <!-- Team -->
@@ -72,39 +74,25 @@
   <div class="container">
     <h2 class="text-center">Our Team of Bakers</h2>
     <div class="row text-center">
+      {% if bakers %}
+      {% for baker in bakers %}
       <div class="col-md-4">
-        <img src="assets/img/bakers/kyle.jpg" alt="" class="rounded-circle mb-3">
-        <h4>Kyle Brown</h4>
-        <p class="text-success">
-          <i class="fas fa-award text-success mb-3"></i> Baker</p>
-        <hr>
-        <p>
-          <i class="fas fa-phone"></i> +45 36363636</p>
-        <p>
-          <i class="fas fa-envelope-open"></i> kyle@mycake.dk</p>
-      </div>
-
-      <div class="col-md-4">
-        <img src="assets/img/bakers/mark.jpg" alt="" class="rounded-circle mb-3">
-        <h4>Mark Hudson</h4>
+        <img src="{{ baker.photos.url }}" alt="" class="rounded-circle mb-3">
+        <h4>{{baker.name}}</h4>
         <p class="text-success">Baker</p>
         <hr>
         <p>
-          <i class="fas fa-phone"></i> +45 36363636</p>
+          <i class="fas fa-phone"></i> {{baker.phone}}</p>
         <p>
-          <i class="fas fa-envelope-open"></i> mark@mycake.dk</p>
+          <i class="fas fa-envelope-open"></i> {{baker.email}}</p>
       </div>
 
-      <div class="col-md-4">
-        <img src="assets/img/bakers/jenny.jpg" alt="" class="rounded-circle mb-3">
-        <h4>Jenny Johnson</h4>
-        <p class="text-success">Baker</p>
-        <hr>
-        <p>
-          <i class="fas fa-phone"></i> +45 3333333</p>
-        <p>
-          <i class="fas fa-envelope-open"></i> jenny@mycake.dk</p>
+      {% endfor %}
+      {% else %}
+      <div class="col-md-12">
+        <p>No Bakers Available</p>
       </div>
+      {% endif %}
     </div>
   </div>
 </section>

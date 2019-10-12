@@ -8,31 +8,14 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <ul class="navbar-nav">
-        <li 
-          {% if '/' == request.path %}
-            class="nav-item active mr-3"
-          {% else %}
-            class="nav-item mr-3"
-          {% endif %}
-        >
+        <li {% if '/' == request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" {% endif %}>
           <a class="nav-link" href="{% url 'index' %}">Home</a>
         </li>
-        <li 
-          {% if 'about' in request.path %}
-            class="nav-item active mr-3"
-          {% else %}
-            class="nav-item mr-3"
-          {% endif %}
-        >
+        <li {% if 'about' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" {% endif %}>
           <a class="nav-link" href="{% url 'about' %}">About</a>
         </li>
-        <li 
-          {% if 'listings' in request.path %}
-            class="nav-item active mr-3"
-          {% else %}
-            class="nav-item mr-3"
-          {% endif %}
-        >
+        <li {% if 'listings' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3"
+          {% endif %}>
           <a class="nav-link" href="{% url 'listings'  %}">Cakes list</a>
         </li>
       </ul>
@@ -49,6 +32,10 @@
             Login</a>
         </li>
       </ul>
+      <form class="form-inline my-2 my-lg-0" action="{% url 'search'%}" method="">
+        <input type="text" name="keywords" class="form-control" placeholder="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
     </div>
   </div>
 </nav>
