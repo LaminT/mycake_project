@@ -33,7 +33,7 @@
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0" action="{% url 'search'%}" method="">
-        <input type="text" name="keywords" class="form-control" placeholder="Search">
+        <input type="text" name="keywords" class="form-control" placeholder="Search" value="{{values.keywords}}">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>

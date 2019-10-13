@@ -13,12 +13,13 @@
           <div class="form-row">
             <div class="col-md-4 mb-3">
               <label class="sr-only">Keywords</label>
-              <input type="text" name="keywords" class="form-control" placeholder="Keyword (description, flour, etc)">
+              <input type="text" name="keywords" class="form-control" placeholder="Keyword (description, flour, etc)"
+                value="{{values.keywords}}">
             </div>
 
             <div class="col-md-4 mb-3">
               <label class="sr-only">City</label>
-              <input type="text" name="city" class="form-control" placeholder="City">
+              <input type="text" name="city" class="form-control" placeholder="City" value="{{values.keywords}}">
             </div>
 
             <div class="col-md-4 mb-3">
@@ -26,7 +27,11 @@
               <select name="city" class="form-control">
                 <option selected="true" disabled="disabled">City (All)</option>
                 {% for key, value in city_choices.items %}
-                <option value="{{key}}">{{value}}</option>
+                <option value="{{key}}"
+                {% if key == values.city %} 
+                selected
+                {% endif %}
+                >{{value}}</option>
                 {% endfor %}
 
               </select>
@@ -37,16 +42,25 @@
             <div class="col-md-6 mb-3">
               <label class="sr-only">Title</label>
               <select name="title" class="form-control">
+                <option selected="true" disabled="disabled">Title (All)</option>
                 {% for key, value in title_choices.items %}
-                <option value="{{key}}">{{value}}</option>
+                <option value="{{key}}" 
+                {% if key == values.title %} 
+                selected
+                {% endif %}
+                >{{value}}</option>
                 {% endfor %}
               </select>
             </div>
             <div class="col-md-6 mb-3">
-              <select name="price" class="form-control">
-                <option selected="true" disabled="disabled">Max Price (All)</option>
+              <select name="price" class="form-control" id="type">
+                <option selected="true" disabled="disabled">Max Price (Any)</option>
                 {% for key, value in price_choices.items %}
-                <option value="{{key}}">{{value}}</option>
+                <option value="{{key}}"
+                {% if key == values.price %} 
+                selected
+                {% endif %}
+                >{{value}}</option>
                 {% endfor %}
               </select>
             </div>
@@ -94,7 +108,6 @@
           <div class="card-body">
             <div class="listing-heading text-center">
               <h4 class="text-primary">{{ listing.title }}</h4>
-
               <p>
                 <i class="fas fa-map-marker text-secondary"></i> {{ listing.address }}</p>
               <hr>

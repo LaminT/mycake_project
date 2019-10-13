@@ -3,6 +3,7 @@ title_choices = {
     'Birthdays': 'Birthdays',
     'Christmas': 'Christmas',
     'Confirmations': 'Confirmations',
+    'Eid Mubarak': 'Eid Mubarak',
     'New Years': 'New Years',
     'Party': 'Party',
     'Special Occasions': 'Special Occasions',
