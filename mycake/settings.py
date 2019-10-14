@@ -1,3 +1,4 @@
+from django.contrib.messages import constants as messages
 """
 Django settings for mycake project.
 
@@ -134,3 +135,8 @@ STATICFILES_DIRS = [
 # Media Folder Settings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+# messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}
