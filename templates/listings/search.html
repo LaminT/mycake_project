@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
-{% load static %}
 
 {% load humanize %}
+
+{% block title %} | Search Results {% endblock %}
 
 {% block content %}
 <section id="showcase-inner" class="showcase-search text-white py-5">
@@ -27,11 +28,7 @@
               <select name="city" class="form-control">
                 <option selected="true" disabled="disabled">City (All)</option>
                 {% for key, value in city_choices.items %}
-                <option value="{{key}}"
-                {% if key == values.city %} 
-                selected
-                {% endif %}
-                >{{value}}</option>
+                <option value="{{key}}" {% if key == values.city %} selected {% endif %}>{{value}}</option>
                 {% endfor %}
 
               </select>
@@ -44,11 +41,7 @@
               <select name="title" class="form-control">
                 <option selected="true" disabled="disabled">Title (All)</option>
                 {% for key, value in title_choices.items %}
-                <option value="{{key}}" 
-                {% if key == values.title %} 
-                selected
-                {% endif %}
-                >{{value}}</option>
+                <option value="{{key}}" {% if key == values.title %} selected {% endif %}>{{value}}</option>
                 {% endfor %}
               </select>
             </div>
@@ -56,11 +49,7 @@
               <select name="price" class="form-control" id="type">
                 <option selected="true" disabled="disabled">Max Price (Any)</option>
                 {% for key, value in price_choices.items %}
-                <option value="{{key}}"
-                {% if key == values.price %} 
-                selected
-                {% endif %}
-                >{{value}}</option>
+                <option value="{{key}}" {% if key == values.price %} selected {% endif %}>{{value}}</option>
                 {% endfor %}
               </select>
             </div>
