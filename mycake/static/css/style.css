@@ -28,15 +28,13 @@ img {
 } */
 
 .carousel-item {
-  height: 740px;
+  height: 450px;
   padding-top: 0;
   margin-top: 0;
   position: center;
 }
 
-.carousel-image-1,
-.carousel-image-2,
-.carousel-image-3 {
+.carousel-image-1 {
 
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(56, 70, 77, 0.0)), to(rgba(56, 70, 77, 0.9))), url(../img/cake1.jpg);
   background-image: linear-gradient(rgba(56, 70, 77, 0.9), rgba(56, 70, 77, 0.0)), url(../img/cake1.jpg);
@@ -44,7 +42,7 @@ img {
 
 }
 
-/* .carousel-image-2 {
+.carousel-image-2 {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(56, 70, 77, 0.0)), to(rgba(56, 70, 77, 0.9))), url(../img/cake2.jpg);
   background-image: linear-gradient(rgba(56, 70, 77, 0.9), rgba(56, 70, 77, 0.0)), url(../img/cake2.jpg);
   background-size: cover;
@@ -54,10 +52,9 @@ img {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(56, 70, 77, 0.0)), to(rgba(56, 70, 77, 0.9))), url(../img/cake3.jpg);
   background-image: linear-gradient(rgba(56, 70, 77, 0.9), rgba(56, 70, 77, 0.0)), url(../img/cake3.jpg);
   background-size: cover;
-} */
+}
 
-
-#listings {
+* #listings {
   background-color: #f7f1e3;
 }
 
